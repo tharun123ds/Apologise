@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Please Accept My Apology</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+            min-height: 100vh;
+                display: flex;
+                    align-items: center;
+                        justify-content: center;
+                            font-family: Arial, sans-serif;
+                                background: linear-gradient(135deg, #ffe4ec, #fff7f9);
+                                    overflow: hidden;
+                                    }
+
+                                    .card {
+                                        width: 92%;
+                                            max-width: 520px;
+                                                padding: 42px 28px;
+                                                    text-align: center;
+                                                        background: rgba(255, 255, 255, 0.95);
+                                                            border-radius: 28px;
+                                                                box-shadow: 0 18px 60px rgba(120, 30, 60, 0.18);
+                                                                    position: relative;
+                                                                    }
+
+                                                                    .heart {
+                                                                        font-size: 58px;
+                                                                            animation: pulse 1.4s infinite;
+                                                                            }
+
+                                                                            @keyframes pulse {
+                                                                                50% {
+                                                                                        transform: scale(1.12);
+                                                                                            }
+                                                                                            }
+
+                                                                                            h1 {
+                                                                                                color: #b42355;
+                                                                                                    margin: 12px 0 30px;
+                                                                                                        font-size: 34px;
+                                                                                                        }
+
+                                                                                                        .buttons {
+                                                                                                            display: flex;
+                                                                                                                gap: 18px;
+                                                                                                                    justify-content: center;
+                                                                                                                        margin-top: 20px;
+                                                                                                                        }
+
+                                                                                                                        button {
+                                                                                                                            border: 0;
+                                                                                                                                border-radius: 14px;
+                                                                                                                                    padding: 14px 25px;
+                                                                                                                                        font-size: 17px;
+                                                                                                                                            font-weight: bold;
+                                                                                                                                                cursor: pointer;
+                                                                                                                                                    transition: 0.2s;
+                                                                                                                                                    }
+
+                                                                                                                                                    #yes {
+                                                                                                                                                        background: #c92f65;
+                                                                                                                                                            color: white;
+                                                                                                                                                            }
+
+                                                                                                                                                            #yes:hover {
+                                                                                                                                                                transform: scale(1.05);
+                                                                                                                                                                }
+
+                                                                                                                                                                #no {
+                                                                                                                                                                    background: #eeeeee;
+                                                                                                                                                                        color: #555;
+                                                                                                                                                                            position: relative;
+                                                                                                                                                                            }
+
+                                                                                                                                                                            #message {
+                                                                                                                                                                                display: none;
+                                                                                                                                                                                    margin-top: 25px;
+                                                                                                                                                                                        color: #b42355;
+                                                                                                                                                                                            font-weight: bold;
+                                                                                                                                                                                                font-size: 20px;
+                                                                                                                                                                                                }
+
+                                                                                                                                                                                                .fall {
+                                                                                                                                                                                                    position: fixed;
+                                                                                                                                                                                                        top: -30px;
+                                                                                                                                                                                                            font-size: 22px;
+                                                                                                                                                                                                                animation: fall linear forwards;
+                                                                                                                                                                                                                    pointer-events: none;
+                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                    @keyframes fall {
+                                                                                                                                                                                                                        to {
+                                                                                                                                                                                                                                transform: translateY(110vh) rotate(360deg);
+                                                                                                                                                                                                                                        opacity: 0;
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            </style>
+                                                                                                                                                                                                                                            </head>
+
+                                                                                                                                                                                                                                            <body>
+
+                                                                                                                                                                                                                                            <div class="card">
+
+                                                                                                                                                                                                                                                <div class="heart">❤️</div>
+
+                                                                                                                                                                                                                                                    <h1>Please Accept My Apology</h1>
+
+                                                                                                                                                                                                                                                        <div class="buttons">
+                                                                                                                                                                                                                                                                <button id="yes">
+                                                                                                                                                                                                                                                                            Yes, I forgive you ❤️
+                                                                                                                                                                                                                                                                                    </button>
+
+                                                                                                                                                                                                                                                                                            <button id="no">
+                                                                                                                                                                                                                                                                                                        No
+                                                                                                                                                                                                                                                                                                                </button>
+                                                                                                                                                                                                                                                                                                                    </div>
+
+                                                                                                                                                                                                                                                                                                                        <div id="message">
+                                                                                                                                                                                                                                                                                                                                Thank you ❤️ I promise I'll do better.
+                                                                                                                                                                                                                                                                                                                                    </div>
+
+                                                                                                                                                                                                                                                                                                                                    </div>
+
+                                                                                                                                                                                                                                                                                                                                    <script>
+
+                                                                                                                                                                                                                                                                                                                                    const no = document.getElementById("no");
+                                                                                                                                                                                                                                                                                                                                    const yes = document.getElementById("yes");
+                                                                                                                                                                                                                                                                                                                                    const message = document.getElementById("message");
+
+                                                                                                                                                                                                                                                                                                                                    function moveNo() {
+
+                                                                                                                                                                                                                                                                                                                                        const maxX = window.innerWidth - no.offsetWidth - 20;
+                                                                                                                                                                                                                                                                                                                                            const maxY = window.innerHeight - no.offsetHeight - 20;
+
+                                                                                                                                                                                                                                                                                                                                                no.style.position = "fixed";
+
+                                                                                                                                                                                                                                                                                                                                                    no.style.left =
+                                                                                                                                                                                                                                                                                                                                                            (20 + Math.random() * Math.max(1, maxX - 20)) + "px";
+
+                                                                                                                                                                                                                                                                                                                                                                no.style.top =
+                                                                                                                                                                                                                                                                                                                                                                        (20 + Math.random() * Math.max(1, maxY - 20)) + "px";
+
+                                                                                                                                                                                                                                                                                                                                                                            createFallingHeart();
+                                                                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                                                                            no.addEventListener("mouseenter", moveNo);
+
+                                                                                                                                                                                                                                                                                                                                                                            no.addEventListener("touchstart", function(event) {
+                                                                                                                                                                                                                                                                                                                                                                                event.preventDefault();
+                                                                                                                                                                                                                                                                                                                                                                                    moveNo();
+                                                                                                                                                                                                                                                                                                                                                                                    });
+
+                                                                                                                                                                                                                                                                                                                                                                                    no.addEventListener("click", moveNo);
+
+
+                                                                                                                                                                                                                                                                                                                                                                                    yes.addEventListener("click", function() {
+
+                                                                                                                                                                                                                                                                                                                                                                                        message.style.display = "block";
+
+                                                                                                                                                                                                                                                                                                                                                                                            for (let i = 0; i < 35; i++) {
+                                                                                                                                                                                                                                                                                                                                                                                                    setTimeout(createFallingHeart, i * 45);
+                                                                                                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                                                                                                        });
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                        function createFallingHeart() {
+
+                                                                                                                                                                                                                                                                                                                                                                                                            const heart = document.createElement("div");
+
+                                                                                                                                                                                                                                                                                                                                                                                                                heart.className = "fall";
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    heart.textContent =
+                                                                                                                                                                                                                                                                                                                                                                                                                            ["❤️", "💗", "💕", "✨", "🌸"]
+                                                                                                                                                                                                                                                                                                                                                                                                                                    [Math.floor(Math.random() * 5)];
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                        heart.style.left =
+                                                                                                                                                                                                                                                                                                                                                                                                                                                Math.random() * 100 + "vw";
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    heart.style.animationDuration =
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            (2 + Math.random() * 3) + "s";
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                document.body.appendChild(heart);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    setTimeout(function() {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            heart.remove();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }, 5500);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </script>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </body>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </html>
